@@ -1,75 +1,92 @@
-# React + TypeScript + Vite
+Personal Reading List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal reading list built with React and TypeScript. The application uses JSON Server as a local persistent API for storing reading-list items.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Add books or articles with a title and author
+* Remove items from the reading list
+* Persist items through JSON Server
+* Distinct loading, error, and empty states
+* Reviewer-accessible demo states without changing source code
+* Keyboard-accessible controls
+* Responsive layout for smaller screens
 
-## React Compiler
+Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* TypeScript
+* Vite
+* JSON Server
+* CSS
 
-## Expanding the ESLint configuration
+Running Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install dependencies:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Start the frontend in one terminal:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+npm run dev
 
-```
+Start the JSON Server in a second terminal:
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+npm run server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The frontend runs at:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+http://localhost:5173
 
-```
+The API is available at:
+
+http://localhost:3001/readingList
+
+Reviewing the Required States
+
+The application provides demo URLs so the required states can be reviewed without modifying the source code.
+
+Normal state
+
+http://localhost:5173/
+
+Uses the real JSON Server API and displays the current reading list.
+
+Empty state
+
+http://localhost:5173/?state=empty
+
+Shows an intentionally empty reading list.
+
+The empty state explains what the reading list is for and provides an Add your first item action.
+
+Loading state
+
+http://localhost:5173/?state=loading
+
+Shows the loading state for several seconds so it can be reviewed without changing the code.
+
+Error state
+
+http://localhost:5173/?state=error
+
+Shows the error state with an explanation that the reading list could not be loaded and instructions to check the connection and try again.
+
+These query parameters are only demonstration controls. The normal application uses the real API.
+
+Accessibility
+
+The interface uses semantic HTML and native form controls.
+
+* Form fields have associated labels.
+* Buttons are keyboard accessible.
+* Visible :focus-visible styles are provided for keyboard navigation.
+* The loading state uses role="status".
+* The error state uses role="alert".
+* The interface remains usable at smaller viewport widths.
+
+Data Persistence
+
+Reading-list items are stored by JSON Server in db.json.
+
+Adding or removing an item updates the API data, so the list remains available after refreshing the page or restarting the development servers.
