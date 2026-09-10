@@ -1,0 +1,66 @@
+.add-form {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.add-form h2 {
+  margin-top: 0;
+}
+
+.add-form label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-weight: 600;
+}
+
+.add-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bbb;
+  border-radius: 0.5rem;
+  font: inherit;
+}
+
+.add-form input:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.state {
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.state h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.state p {
+  line-height: 1.6;
+}
+
+.state-loading {
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+}
+
+.state-error {
+  border: 1px solid #d8a0a0;
+  background: #fff5f5;
+}
+
+.state-empty {
+  border: 1px solid #ccc;
+  background: #fafafa;
+}

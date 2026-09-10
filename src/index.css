@@ -1,0 +1,93 @@
+.reading-list-page {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+}
+
+.reading-list {
+  width: min(100%, 800px);
+  margin: 0 auto;
+}
+
+.reading-list-header {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.reading-list-header h1 {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.intro {
+  max-width: 600px;
+  margin: 1rem 0 1.5rem;
+  line-height: 1.6;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f3f3f3;
+}
+
+button:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.book-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.book-item h3 {
+  margin: 0 0 0.35rem;
+}
+
+.book-item p {
+  margin: 0;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .reading-list-page {
+    padding: 2rem 1rem;
+  }
+
+  .reading-list-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .book-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
