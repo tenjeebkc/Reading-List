@@ -24,23 +24,23 @@ A responsive personal reading list built with React and TypeScript. The applicat
 
 Install dependencies:
 
-npm install
+* npm install
 
-** Start the frontend in one terminal:
+Start the frontend in one terminal: 
 
-npm run dev
+* npm run dev
 
-** Start the JSON Server in a second terminal:
+Start the JSON Server in a second terminal:
 
-npm run server
+* npm run server
 
-** The frontend runs at:
+The frontend runs at:
 
-http://localhost:5173
+* http://localhost:5173
 
-** The API is available at:
+The API is available at:
 
-http://localhost:3001/readingList
+* http://localhost:3001/readingList
 
 # Reviewing the Required States
 
